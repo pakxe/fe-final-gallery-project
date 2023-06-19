@@ -4,8 +4,15 @@ import { styled } from 'styled-components';
 
 const BackGround = styled.div`
   width: 768px;
-  height: 100vh;
-  border: 1px solid black;
+  height: 100%;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Layout = () => {
