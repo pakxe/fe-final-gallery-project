@@ -1,21 +1,21 @@
 const colors = {
   white: '#ffffff',
   black: '#1B1313',
-  gray: '#D3D3D3',
+  gray: '#9c9c9c',
   blue: '#0679C0',
 };
 
 const font = {
   title: `
-    size: 20px;
+    font-size: 18px;
     font-weight: 700;
   `,
   largeTitle: `
-    size: 24px;
+    font-size: 24px;
     font-weight: 700;
   `,
   small: `
-    size: 12px;
+    font-size: 12px;
   `,
   sub: `
     color: ${colors.gray};
@@ -24,7 +24,7 @@ const font = {
     color: ${colors.blue};
   `,
   bold: `
-    font-weight: 600;
+    font-weight: 700;
   `,
 };
 
