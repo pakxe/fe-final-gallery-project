@@ -11,14 +11,16 @@ const ProfileImage = styled.img`
 `;
 
 const ProfileWrapper = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px 0;
 `;
 
-const Profile = (props) => {
+const Profile = () => {
+  // TODO: 데이터 받아오기
+
   return (
     <ProfileWrapper>
       <ProfileImage src={lionImage} />
@@ -28,7 +30,7 @@ const Profile = (props) => {
         <Typo largeTitle>likelion_11th_frontend</Typo>
         <Typo>멋쟁이사자처럼 11기 여러분의 소중한 추억들을 보관합니다.😎</Typo>
         <Margin height='16' />
-        <Typo bold>게시물 {props.articleCount}개</Typo>
+        <Typo bold>게시물 1개</Typo>
       </div>
     </ProfileWrapper>
   );
