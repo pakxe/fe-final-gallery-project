@@ -5,23 +5,21 @@ import Typo from '../Typo/Typo';
 import Margin from '../Margin/Margin';
 
 const TitleWrapper = styled.div`
-  width: 90%;
+  width: 100%;
+  /* width: 90%; */
   display: flex;
   justify-content: start;
   flex-direction: column;
   padding: 20px 0;
 
-  @media (min-width: 768px) {
-    width: 74%;
+  @media (max-width: 768px) {
+    width: 90%;
   }
 `;
 
 const MainImage = styled.img`
-  width: 80%;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
+  width: 100%;
+  height: 100%;
 `;
 
 // TODO: props로 article id 받기
