@@ -3,14 +3,19 @@ import lion from '../../assets/lion.png';
 import { styled } from 'styled-components';
 import Typo from '../Typo/Typo';
 import Margin from '../Margin/Margin';
+import Flex from '../Flex/Flex';
 
-const TitleWrapper = styled.div`
-  width: 100%;
+const TitleWrapper = styled(Flex)`
   /* width: 90%; */
-  display: flex;
   justify-content: start;
   flex-direction: column;
+  align-items: start;
   padding: 20px 0;
+`;
+
+const ArticleInfoWrapper = styled(Flex)`
+  width: 100%;
+  justify-content: space-between;
 
   @media (max-width: 768px) {
     width: 90%;
@@ -28,11 +33,15 @@ const SelectedArticle = (props) => {
 
   return (
     <>
-      <TitleWrapper>
-        <Typo largeTitle>받아온 데이터로 제목</Typo>
-        <Margin height='8' />
-        <Typo>받아온 데이터로 제목</Typo>
-      </TitleWrapper>
+      <ArticleInfoWrapper>
+        <TitleWrapper>
+          <Typo largeTitle>받아온 데이터로 제목</Typo>
+          <Margin height='8' />
+          <Typo>받아온 데이터로 제목</Typo>
+        </TitleWrapper>
+
+        <Typo>댓글 6개</Typo>
+      </ArticleInfoWrapper>
 
       <MainImage src={lion} />
     </>
