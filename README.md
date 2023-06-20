@@ -2,24 +2,24 @@
 
 지금까지 배운 모든 개념을 활용하여 인스타그램st 의 간단한 갤러리를 만듭니다.
 
-## 목표
+## ❍ 목표
 
 - 실제 동작하는 간단한 멀티페이지 웹 어플리케이션을 개발할 수 있다.
 - 백엔드와 데이터를 주고받기 위한 axios로 REST API 통신을 능숙하게 다룰 수 있다. (해커톤에서 씁니다)
 
-## project stack
+## ❍ project stack
 
 - React Router ([react-router-dom@6](https://reactrouter.com/docs/en/v6/getting-started/installation))
 - Styled Components ([styled-components](https://styled-components.com/docs/basics#installation))
 - Axios ([axios](https://axios-http.com/kr/docs/intro))
 
-## 완성본 미리보기
+## ❍ 완성본 미리보기
 
 > 접속해서 직접 기능을 사용해볼 수 있습니다.
 
 http://likelion-10th-inha-gallery.surge.sh
 
-## 기능
+## ❍ 기능
 
 아래 기능을 모두 준수하도록 구현합니다.
 
@@ -41,7 +41,7 @@ http://likelion-10th-inha-gallery.surge.sh
 
 기타 디자인과 레이아웃은 원본과 요구사항과 크게 다르지 않은 범위에서 **원하는대로** 만드셔도 좋습니다.
 
-## API
+## ❍ API
 
 요청을 위한 호스트 정보와 문서는 아래와 같습니다.
 
@@ -56,7 +56,7 @@ http://likelion-10th-inha-gallery.surge.sh
 - [Axios 공식문서 (한국어)](https://axios-http.com/kr/docs/intro)
 - [Axios 러닝 가이드 (한국어)](https://yamoo9.github.io/axios/guide/usage.html#get-%EC%9A%94%EC%B2%AD)
 
-## 완성한 코드
+## ❍ 완성한 코드
 
 - https://github.com/Likelion-Inha-10/fe-gallery-project-example
 
