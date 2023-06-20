@@ -1,6 +1,6 @@
-# 인스타st 갤러리 프로젝트
+# 🎞️ 인스타st 갤러리 프로젝트
 
-프로젝트에 대한 설명
+지금까지 배운 모든 개념을 활용하여 인스타그램st 의 간단한 갤러리를 만듭니다.
 
 ## 목표
 
@@ -13,22 +13,22 @@
 - Styled Components ([styled-components](https://styled-components.com/docs/basics#installation))
 - Axios ([axios](https://axios-http.com/kr/docs/intro))
 
-## 🔍 완성본 미리보기
+## 완성본 미리보기
 
 > 접속해서 직접 기능을 사용해볼 수 있습니다.
 
 http://likelion-10th-inha-gallery.surge.sh
 
-## ⚙️ 기능
+## 기능
 
-지금까지 배운 모든 개념을 활용하여 인스타그램st의 간단한 갤러리 앱을 만듭니다.
+아래 기능을 모두 준수하도록 구현합니다.
 
 1. REST API를 사용하여 여러가지 이미지를 불러와 화면에 표시합니다.
 2. 이미지를 클릭하면, REST API를 사용하여 해당 이미지에 달린 댓글 목록을 불러와 사용자에게 표시합니다.
 3. REST API를 사용하여 댓글을 새로 작성할 수 있습니다.
 4. REST API를 사용하여 댓글을 삭제할 수 있습니다.
 
-### 📒 필수 구현 사항
+# 🎯 필수 구현 사항
 
 ![](./readme-image.png)
 
@@ -39,11 +39,11 @@ http://likelion-10th-inha-gallery.surge.sh
 5. 댓글 목록을 표시합니다.
 6. 삭제 버튼을 클릭하면 해당 댓글을 삭제하고, 댓글 목록을 다시 불러옵니다.
 
-기타 디자인과 레이아웃은 원본과 요구사항과 크게 다르지 않은 범위에서 원하는대로 만드셔도 좋습니다.
+기타 디자인과 레이아웃은 원본과 요구사항과 크게 다르지 않은 범위에서 **원하는대로** 만드셔도 좋습니다.
 
 ## API
 
-요청을 호스트 정보와 문서는 아래와 같습니다.
+요청을 위한 호스트 정보와 문서는 아래와 같습니다.
 
 - **HOST**: https://gallery.devhudi.xyz
 - **DOCS** : https://gallery.devhudi.xyz/swagger-ui/index.html
@@ -56,9 +56,8 @@ http://likelion-10th-inha-gallery.surge.sh
 - [Axios 공식문서 (한국어)](https://axios-http.com/kr/docs/intro)
 - [Axios 러닝 가이드 (한국어)](https://yamoo9.github.io/axios/guide/usage.html#get-%EC%9A%94%EC%B2%AD)
 
-## 완성본 코드
+## 완성한 코드
 
 - https://github.com/Likelion-Inha-10/fe-gallery-project-example
 
 > 예제 코드는 과제 중 자유롭게 참고 가능하지만, 최대한 본인의 힘으로 해결하려 노력합시다 😇
-# fe-final-gallery-project
