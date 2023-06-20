@@ -5,14 +5,10 @@ import HorizontalLine from '../HorizontalLine/HorizontalLine';
 import { styled } from 'styled-components';
 
 const AddCommentWrapper = styled.div`
+  width: 100%;
   display: flex;
-  width: 80%;
   justify-content: space-between;
   border-bottom: 1px solid ${(props) => props.theme.colors.lightGray};
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 `;
 
 // id props
