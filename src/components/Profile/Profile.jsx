@@ -18,8 +18,9 @@ const ProfileWrapper = styled.div`
   padding: 20px 0;
 `;
 
-const Profile = () => {
+const Profile = (props) => {
   // TODO: 데이터 받아오기
+  // TODO: 하드 코딩 제거
 
   return (
     <ProfileWrapper>
@@ -30,7 +31,7 @@ const Profile = () => {
         <Typo largeTitle>likelion_11th_frontend</Typo>
         <Typo>멋쟁이사자처럼 11기 여러분의 소중한 추억들을 보관합니다.😎</Typo>
         <Margin height='16' />
-        <Typo bold>게시물 1개</Typo>
+        <Typo bold>게시물 8개</Typo>
       </div>
     </ProfileWrapper>
   );
