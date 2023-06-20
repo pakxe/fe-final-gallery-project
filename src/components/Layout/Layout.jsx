@@ -4,7 +4,6 @@ import { styled } from 'styled-components';
 
 const BackGround = styled.div`
   width: 768px;
-  height: 100%;
   background-color: white;
 
   display: flex;
