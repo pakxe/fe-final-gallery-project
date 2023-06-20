@@ -61,3 +61,4 @@ http://likelion-10th-inha-gallery.surge.sh
 - https://github.com/Likelion-Inha-10/fe-gallery-project-example
 
 > 예제 코드는 과제 중 자유롭게 참고 가능하지만, 최대한 본인의 힘으로 해결하려 노력합시다 😇
+# fe-final-gallery-project
