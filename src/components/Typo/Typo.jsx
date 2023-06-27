@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-const Typo = styled.p`
+const StyledTypo = styled.p`
   color: ${(props) => (props.color ? props.theme.colors[props.color] : props.theme.colors.black)};
   font-size: ${(props) => props.size || '1rem'};
   font-weight: ${(props) => props.weight || 'normal'};
@@ -12,5 +12,7 @@ const Typo = styled.p`
   ${(props) => props.submit && props.theme.font.submit};
   ${(props) => props.bold && props.theme.font.bold};
 `;
+
+const Typo = (props) => <StyledTypo {...props}>{props.children}</StyledTypo>;
 
 export default Typo;
