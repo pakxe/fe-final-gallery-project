@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ListContainer from '../ListContainer/ListContainer';
 import Comment from '../Comment/Comment';
 import { styled } from 'styled-components';
+import { getCommentListById } from '../../apis/comment';
 
 const CommentListWrapper = styled.div`
   padding-top: 14px;
@@ -10,12 +11,22 @@ const CommentListWrapper = styled.div`
 `;
 
 const CommentList = (props) => {
-  // TODO: id로 댓글 리스트 불러오기
-  const [list, _] = useState(new Array(8).fill(0).map((_, i) => i));
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    getCommentListById(props.id).then((res) => setComments(res.data));
+  }, []);
 
   return (
     <CommentListWrapper>
-      <ListContainer elements={list} renderProp={(element) => <Comment>{element}</Comment>} />
+      <ListContainer
+        elements={comments}
+        renderProp={(element) => (
+          <Comment articleId={props.id} id={element.id}>
+            {element.commentBody}
+          </Comment>
+        )}
+      />
     </CommentListWrapper>
   );
 };
