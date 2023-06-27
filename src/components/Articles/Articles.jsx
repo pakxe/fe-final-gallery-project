@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import lion from '../../assets/lion.png';
 import Article from './Article';
 import { styled } from 'styled-components';
+import { getArticleList } from '../../apis/article';
+import axios from 'axios';
 
 const ArticlesWrapper = styled.div`
   display: grid;
@@ -12,20 +14,19 @@ const ArticlesWrapper = styled.div`
 const Articles = () => {
   const [articleList, setArticleList] = useState([]);
 
-  // TODO: 데이터 받아오기
-  // TODO: 하드 코딩 제거
   useEffect(() => {
-    const temp = new Array(8).fill(0).map((_, i) => `이미지 제목${i + 1}`);
-
-    setArticleList(temp);
+    getArticleList().then((res) => setArticleList(res.data));
   }, []);
 
-  // TODO: 하드 코딩 제거
   return (
     <ArticlesWrapper>
-      {articleList.map((_, index) => (
-        <Article image={lion} title={_} contents='이미지 설명' id={index} />
-      ))}
+      {articleList.length === 0 ? (
+        <div>로딩중</div>
+      ) : (
+        articleList.map((article) => (
+          <Article image={article.imageURL} title={article.imageName} contents={article.imageText} id={article.id} />
+        ))
+      )}
     </ArticlesWrapper>
   );
 };
