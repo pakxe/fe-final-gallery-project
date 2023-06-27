@@ -11,7 +11,11 @@ const TitleWrapper = styled(Flex)`
   justify-content: start;
   flex-direction: column;
   align-items: start;
-  padding: 20px 0;
+  padding: 20px 20px 20px 0;
+
+  @media (max-width: 768px) {
+    width: 233px;
+  }
 `;
 
 const ArticleInfoWrapper = styled(Flex)`
@@ -44,16 +48,6 @@ const SelectedArticle = (props) => {
     getCommentListById(props.id).then((res) => setComments(res.data));
   }, []);
 
-  // useEffect(async () => {
-  //   // 게시글 리스트 받아오기
-  //   const { data } = await getArticleList();
-
-  //   // 리스트에서 현재 선택된 게시글을 id로 찾기
-  //   const curArticle = data.filter((article) => article.id === `image${props.id}`)[0];
-  //   console.log(curArticle);
-  //   setArticle(curArticle);
-  // }, []);
-
   return (
     <>
       <ArticleInfoWrapper>
@@ -63,7 +57,7 @@ const SelectedArticle = (props) => {
           <Typo>{article.imageText}</Typo>
         </TitleWrapper>
 
-        <Typo>댓글 {comments.length}개</Typo>
+        <Typo small>댓글 {comments.length}개</Typo>
       </ArticleInfoWrapper>
 
       <MainImage src={article.imageURL} />

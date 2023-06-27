@@ -47,11 +47,13 @@ const Article = (props) => {
   return (
     <ArticleWrapper onClick={moveToArticlePage}>
       <ArticleImage src={props.image} />
-      <Margin height='5' />
+      <Margin height='10' />
       <ArticleTextWrapper>
         <ArticleText title>{props.title}</ArticleText>
+        <Margin height='3' />
         <ArticleText color='gray'>{props.contents}</ArticleText>
       </ArticleTextWrapper>
+      <Margin height='5' />
     </ArticleWrapper>
   );
 };
