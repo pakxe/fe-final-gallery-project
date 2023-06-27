@@ -3,6 +3,7 @@ import Button from '../Button/Button';
 import Input from '../Input/Input';
 import HorizontalLine from '../HorizontalLine/HorizontalLine';
 import { styled } from 'styled-components';
+import { postCommentById } from '../../apis/comment';
 
 const AddCommentWrapper = styled.div`
   width: 100%;
@@ -19,13 +20,21 @@ const AddComment = (props) => {
     setComment(target.value);
   };
 
-  // TODO: 아이디 받아서 댓글 게시하는..
+  const postComment = () => {
+    postCommentById(props.id, comment).then(() => window.location.reload());
+  };
+
+  const handleOnKeyPress = (e) => {
+    if (e.key === 'Enter') postComment();
+  };
 
   return (
     <>
       <AddCommentWrapper>
-        <Input value={comment} onChange={handleComment} placeholder='댓글 작성...' />
-        <Button type='submit'>게시</Button>
+        <Input value={comment} onChange={handleComment} placeholder='댓글 작성...' onKeyPress={handleOnKeyPress} />
+        <Button type='submit' onClick={postComment}>
+          게시
+        </Button>
       </AddCommentWrapper>
     </>
   );
