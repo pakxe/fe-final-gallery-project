@@ -4,6 +4,7 @@ import { styled } from 'styled-components';
 import Flex from '../Flex/Flex';
 import Button from '../Button/Button';
 import Margin from '../Margin/Margin';
+import { deleteCommentById } from '../../apis/comment';
 
 const CommentWrapper = styled(Flex)`
   justify-content: space-between;
@@ -12,8 +13,12 @@ const CommentWrapper = styled(Flex)`
 
 const CommentSubWrapper = styled(Flex)``;
 
-const Comment = ({ id, children }) => {
-  // TODO: onClick 으로삭제
+const Comment = ({ articleId, id, children }) => {
+  const deleteComment = () => {
+    deleteCommentById(articleId, id).then(() => {
+      window.location.reload();
+    });
+  };
 
   return (
     <CommentWrapper>
@@ -22,7 +27,9 @@ const Comment = ({ id, children }) => {
         <Margin width='12' />
         <Typo>{children}</Typo>
       </CommentSubWrapper>
-      <Button type='sub'>삭제</Button>
+      <Button type='sub' onClick={deleteComment}>
+        삭제
+      </Button>
     </CommentWrapper>
   );
 };
