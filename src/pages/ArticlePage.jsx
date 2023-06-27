@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SelectedArticle from '../components/SelectedArticle/SelectedArticle';
 import { styled } from 'styled-components';
 import AddComment from '../components/AddComment/AddComment';
 import CommentList from '../components/CommentList/CommentList';
+import { useParams } from 'react-router-dom';
+import { getArticleList } from '../apis/article';
 
 const ArticleWrapper = styled.div`
   width: 80%;
@@ -15,13 +17,16 @@ const ArticleWrapper = styled.div`
   }
 `;
 
-// id를 받아서
-const ArticlePage = (props) => {
+// TODO: id를 받아서
+const ArticlePage = () => {
+  // articleId: Number
+  const { articleId } = useParams();
+
   return (
     <ArticleWrapper>
-      <SelectedArticle id={props.id} />
-      <AddComment />
-      <CommentList />
+      <SelectedArticle id={articleId} />
+      <AddComment id={articleId} />
+      <CommentList id={articleId} />
     </ArticleWrapper>
   );
 };
