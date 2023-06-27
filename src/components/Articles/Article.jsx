@@ -3,35 +3,55 @@ import { styled } from 'styled-components';
 import Typo from '../Typo/Typo';
 import Margin from '../Margin/Margin';
 import { useNavigate } from 'react-router-dom';
+import Flex from '../Flex/Flex';
+import { getArticleList } from '../../apis/article';
+import { getOnlyNumber } from '../../utils/getOnlyNumber';
 
-const ArticleWrapper = styled.div`
-  display: flex;
+const ArticleWrapper = styled(Flex)`
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
   margin: 5px;
   cursor: pointer;
+
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    width: 200px;
+  }
 `;
 
 const ArticleImage = styled.img`
   width: 100%;
   height: 100%;
+`;
 
-  @media (min-width: 768px) {
-    width: 200px;
-    height: 200px;
-  }
+const ArticleTextWrapper = styled.div`
+  width: 100%;
+`;
+
+const ArticleText = styled(Typo)`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 const Article = (props) => {
   const navigate = useNavigate();
 
+  const moveToArticlePage = () => {
+    const articleId = getOnlyNumber(props.id);
+
+    navigate(`/article/${articleId}`);
+  };
+
   return (
-    <ArticleWrapper>
-      <ArticleImage src={props.image} onClick={() => navigate(`/article/${props.id}`)} />
+    <ArticleWrapper onClick={moveToArticlePage}>
+      <ArticleImage src={props.image} />
       <Margin height='5' />
-      <Typo title>{props.title}</Typo>
-      <Typo color='gray'>{props.contents}</Typo>
+      <ArticleTextWrapper>
+        <ArticleText title>{props.title}</ArticleText>
+        <ArticleText color='gray'>{props.contents}</ArticleText>
+      </ArticleTextWrapper>
     </ArticleWrapper>
   );
 };
