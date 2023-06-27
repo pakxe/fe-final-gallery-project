@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-// TODO: API 연결
-// TODO: env
-export const addCommentById = (id) => {
-  return axios.post(`${process.env.REACT_APP_API}`);
+export const postCommentById = async (id, content) => {
+  return await axios.post(`${process.env.REACT_APP_API}/image${id}/comments`, {
+    commentBody: content,
+  });
 };
 
-export const getCommentListById = (id) => {
-  return axios.post(`${process.env.REACT_APP_API}`);
+export const getCommentListById = async (id) => {
+  return await axios.get(`${process.env.REACT_APP_API}/image${id}/comments`);
 };
 
-export const deleteCommentById = (id) => {
-  return axios.post(`${process.env.REACT_APP_API}`);
+export const deleteCommentById = async (articleId, commentId) => {
+  return await axios.delete(`${process.env.REACT_APP_API}/image${articleId}/comments/${commentId}`);
 };
