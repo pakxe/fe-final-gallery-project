@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import lion from '../../assets/lion.png';
 import { styled } from 'styled-components';
 import Typo from '../Typo/Typo';
 import Margin from '../Margin/Margin';
 import Flex from '../Flex/Flex';
+import { getArticleList } from '../../apis/article';
+import { getCommentListById } from '../../apis/comment';
 
 const TitleWrapper = styled(Flex)`
-  /* width: 90%; */
   justify-content: start;
   flex-direction: column;
   align-items: start;
@@ -24,26 +25,48 @@ const ArticleInfoWrapper = styled(Flex)`
 
 const MainImage = styled.img`
   width: 100%;
-  height: 100%;
 `;
 
-// TODO: props로 article id 받기
 const SelectedArticle = (props) => {
-  // TODO: article id로 상세 정보 불러오기
+  const [article, setArticle] = useState({});
+  const [comments, setComments] = useState([]);
+
+  // TODO: 함수이름
+
+  useEffect(() => {
+    getArticleList().then((res) => {
+      // 게시글 리스트 받아오기
+      const curArticle = res.data.filter((article) => article.id === `image${props.id}`)[0];
+
+      // 리스트에서 현재 선택된 게시글을 id로 찾기
+      setArticle(curArticle);
+    });
+    getCommentListById(props.id).then((res) => setComments(res.data));
+  }, []);
+
+  // useEffect(async () => {
+  //   // 게시글 리스트 받아오기
+  //   const { data } = await getArticleList();
+
+  //   // 리스트에서 현재 선택된 게시글을 id로 찾기
+  //   const curArticle = data.filter((article) => article.id === `image${props.id}`)[0];
+  //   console.log(curArticle);
+  //   setArticle(curArticle);
+  // }, []);
 
   return (
     <>
       <ArticleInfoWrapper>
         <TitleWrapper>
-          <Typo largeTitle>받아온 데이터로 제목</Typo>
+          <Typo largeTitle>{article.imageName}</Typo>
           <Margin height='8' />
-          <Typo>받아온 데이터로 제목</Typo>
+          <Typo>{article.imageText}</Typo>
         </TitleWrapper>
 
-        <Typo>댓글 6개</Typo>
+        <Typo>댓글 {comments.length}개</Typo>
       </ArticleInfoWrapper>
 
-      <MainImage src={lion} />
+      <MainImage src={article.imageURL} />
     </>
   );
 };
