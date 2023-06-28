@@ -18,7 +18,7 @@ const buttonType = (type) => {
 
 const StyledButton = styled.button`
   padding: 10px 16px;
-  width: 56px;
+  width: 76px;
   cursor: pointer;
   border: none;
   background-color: transparent;
